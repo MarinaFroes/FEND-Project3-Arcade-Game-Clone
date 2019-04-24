@@ -172,10 +172,10 @@ const Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-boy.png',
-        'images/char-pink-girl',
-        'images/char-horn-girl',
-        'images/char-cat-girl',
-        'images/char-princess-girl'
+        'images/char-pink-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-cat-girl.png',
+        'images/char-princess-girl.png'
     ]);
     Resources.onReady(init);
 
