@@ -34,7 +34,22 @@ class Player extends Entity {
   }
 
   handleInput(direction) {
-    
+    switch (direction) {
+      case 'up':
+        this.y > 0 ? this.y -= 1 : this.y;
+        break;
+      case 'down':
+        this.y < 5 ? this.y += 1 : this.y;
+        break;
+      case 'left':
+        this.x > 0 ? this.x -= 1 : this.x;
+        break;
+      case 'right':
+        this.x < 4 ? this.x += 1 : this.x;
+        break;
+      default:
+        break;
+    }
   }
 }
 
