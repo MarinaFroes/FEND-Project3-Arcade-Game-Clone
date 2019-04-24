@@ -32,3 +32,5 @@ class Player {
 
 const allEnemies = [];
 
+const player = {};
+
