@@ -25,7 +25,10 @@ class Player {
 
   }
 
-  handleInput() {
+  handleInput(direction) {
     
   }
 }
+
+const allEnemies = [];
+
