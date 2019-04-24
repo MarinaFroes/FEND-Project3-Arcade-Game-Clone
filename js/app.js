@@ -1,27 +1,35 @@
-class Enemy {
+class Entity {
   constructor() {
-    this.sprite = 'images/enemy-bug.png';
-  }
-
-  update(dt) {
-    
+    this.sprite = 'images/';
+    this.x = 2;
+    this.y = 5;
   }
 
   render() {
-    AudioContext.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
   }
 }
 
-class Player {
+
+class Enemy extends Entity {
   constructor() {
-    this.sprite = 'images/char-pink-girl.png';
+    super();
+    this.sprite += 'enemy-bug.png';
   }
 
-  update(dt) {
+}
 
+class Player extends Entity {
+  constructor() {
+    super();
+    this.sprite += 'char-pink-girl.png';
+  }
+  
+  update() {
+    
   }
 
-  render() {
+  checkCollision() {
 
   }
 
@@ -32,7 +40,7 @@ class Player {
 
 const allEnemies = [];
 
-const player = {};
+const player = new Player();
 
 document.addEventListener('keyup', e => {
   const allowedKeys = {
@@ -42,5 +50,5 @@ document.addEventListener('keyup', e => {
     40: 'down'
   };
 
-  Player.handleInput(allowedKeys[e.keyCode]);
+  player.handleInput(allowedKeys[e.keyCode]);
 })
