@@ -11,3 +11,21 @@ class Enemy {
     AudioContext.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
 }
+
+class Player {
+  constructor() {
+    this.sprite = 'images/char-pink-girl.png';
+  }
+
+  update(dt) {
+
+  }
+
+  render() {
+
+  }
+
+  handleInput() {
+    
+  }
+}
