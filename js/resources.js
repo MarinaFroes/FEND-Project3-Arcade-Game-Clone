@@ -102,9 +102,9 @@
      * developers by creating a global Resources object.
      */
     window.Resources = {
-        load: load,
-        get: get,
-        onReady: onReady,
-        isReady: isReady
+        load,
+        get,
+        onReady,
+        isReady
     };
 })();
