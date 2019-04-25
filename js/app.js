@@ -5,11 +5,15 @@ class Character {
     this.y = 5;
   }
 
+  update(dt) {
+    this.isOutOfBoard = this.x > 5;
+    this.isInTheWater = this.y === 0;
+  }
+
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
   }
 }
-
 
 class Enemy extends Character {
   constructor(x, y) {
@@ -19,6 +23,10 @@ class Enemy extends Character {
     this.y = y;
   }
 
+  update(dt) {
+    super.update();
+    this.isOutOfBoard ? this.x = -1 : this.x += dt;
+  }
 }
 
 class Player extends Character {
@@ -26,9 +34,10 @@ class Player extends Character {
     super();
     this.sprite += 'char-pink-girl.png';
   }
-  
-  update() {
-    
+
+  update(dt) {
+    super.update();
+    this.isInTheWater && alert('You win');
   }
 
   checkCollision() {

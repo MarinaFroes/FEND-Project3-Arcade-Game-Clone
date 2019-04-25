@@ -90,7 +90,7 @@ const Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        // allEnemies.forEach(enemy => enemy.update(dt));
+        allEnemies.forEach(enemy => enemy.update(dt));
         // player.update();
     }
 
