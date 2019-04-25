@@ -1,4 +1,4 @@
-class Entity {
+class Character {
   constructor() {
     this.sprite = 'images/';
     this.x = 2;
@@ -11,7 +11,7 @@ class Entity {
 }
 
 
-class Enemy extends Entity {
+class Enemy extends Character {
   constructor(x, y) {
     super();
     this.sprite += 'enemy-bug.png';
@@ -21,7 +21,7 @@ class Enemy extends Entity {
 
 }
 
-class Player extends Entity {
+class Player extends Character {
   constructor() {
     super();
     this.sprite += 'char-pink-girl.png';
