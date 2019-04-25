@@ -25,7 +25,8 @@ class Enemy extends Character {
 
   update(dt) {
     super.update();
-    this.isOutOfBoard ? this.x = -1 : this.x += dt;
+    this.randomPace = Math.floor(Math.random() * 6) * dt;
+    this.isOutOfBoard ? this.x = -1 : this.x += this.randomPace;
   }
 }
 
