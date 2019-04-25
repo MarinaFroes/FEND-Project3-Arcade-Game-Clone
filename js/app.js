@@ -12,9 +12,11 @@ class Entity {
 
 
 class Enemy extends Entity {
-  constructor() {
+  constructor(x, y) {
     super();
     this.sprite += 'enemy-bug.png';
+    this.x = x;
+    this.y = y;
   }
 
 }
@@ -53,7 +55,7 @@ class Player extends Entity {
   }
 }
 
-const allEnemies = [];
+const allEnemies = [new Enemy(0,1), new Enemy(0,2), new Enemy(0,3)];
 
 const player = new Player();
 
