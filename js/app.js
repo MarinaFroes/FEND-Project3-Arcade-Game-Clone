@@ -41,8 +41,8 @@ class Player extends Character {
     this.isInTheWater && alert('You win');
   }
 
-  checkCollision() {
-
+  checkCollisions(enemy) {
+    return (this.y === enemy.y) && (this.x >= enemy.x - 0.7) && (this.x <= enemy.x + 0.7);
   }
 
   handleInput(direction) {
