@@ -34,11 +34,16 @@ class Player extends Character {
   constructor() {
     super();
     this.sprite += 'char-pink-girl.png';
+    this.isMoving = false;
+    this.isWinner = false;
   }
 
   update(dt) {
     super.update();
-    this.isInTheWater && alert('You win');
+    if (this.isInTheWater && !this.isWinner && !this.isMoving) {
+      alert('You win');
+      this.isWinner = true;
+    }
   }
 
   checkCollisions(enemy) {
@@ -62,6 +67,12 @@ class Player extends Character {
       default:
         break;
     }
+    this.isMoving = true;
+  }
+  
+  render() {
+    super.render();
+    this.isMoving = false;
   }
 }
 

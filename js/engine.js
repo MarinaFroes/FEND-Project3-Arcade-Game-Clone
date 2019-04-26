@@ -100,7 +100,7 @@ const Engine = (function(global) {
      */
     function updateEntities(dt) {
         allEnemies.forEach(enemy => enemy.update(dt));
-        // player.update();
+        player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -168,7 +168,7 @@ const Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
+       
     }
 
     /* Go ahead and load all of the images we know we're going to need to
