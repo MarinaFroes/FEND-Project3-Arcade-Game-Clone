@@ -42,7 +42,7 @@ class Player extends Character {
 
   update(dt) {
     super.update();
-    if (this.isInTheWater && !this.isWinner && !this.isMoving) {
+    if (this.isInTheWater && !this.isWinner && !this.isMoving && this.score === 3) {
       this.isWinner = true;
       window.openModal = modal.open.bind(modal);
       window.openModal();
@@ -51,14 +51,12 @@ class Player extends Character {
 
   checkCollisions() {
     allEnemies.forEach(enemy => {
-      if (this.y === enemy.y && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
+      if (this.y >= enemy.y - 0.3 && this.y <= enemy.y + 0.3 && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
         player.x = 2;
         player.y = 5;
-        this.score = 0;
-        console.log(`Ooops! ${this.score} is your score`);
         //TODO: Add score
-        this.life > 0 ? this.life -= 1 : 'game over';
-        console.log(this.life);
+        this.life > 0 ? this.life -= 1 : console.log('game over');
+        console.log(`You have ${this.life} lives`);
         //TODO: Add game over
       }
     })
@@ -66,10 +64,15 @@ class Player extends Character {
 
   checkScore() {
     allGems.forEach(gem => {
-      if (this.y === gem.y && this.x === gem.x) {
+      if (this.y === gem.y && this.x >= gem.x - 0.7 && this.x <= gem.x + 0.7) {
         this.score += 1;
-        console.log(this.score);
-      }
+        console.log(`Your score: ${this.score}`);
+        gem.x = -1;
+        gem.y = -1;
+        const star = document.createElement('i');
+        star.setAttribute('class', 'fas fa-star');
+        document.getElementById('score').appendChild(star);
+      } 
     })
   }
 
@@ -123,25 +126,25 @@ class Gem extends Character {
   constructor(color) {
     super();
     this.sprite += 'Gem ' + color +'.png';
-    this.x = (Math.floor(Math.random() * 5));
+    this.x = (Math.floor(Math.random() * 5) + 0.15);
     this.y = (Math.floor(Math.random() * 6));
   }
   
   update(dt) {
     super.update();
   }
-  
 }
 
 const modal = new Modal(document.querySelector('.modal-overlay'));
 
 const allEnemies = [
-  new Enemy(0, 1),
-  new Enemy(0, 2),
-  new Enemy(0, 3),
-  new Enemy(-3, 3),
-  new Enemy(-3, 2),
-  new Enemy(-3, 1)];
+  new Enemy(0, 0.7),
+  new Enemy(0, 1.7),
+  new Enemy(0, 2.7),
+  // new Enemy(-3, 2.7),
+  // new Enemy(-3, 1.7),
+  // new Enemy(-3, 0.7)
+];
 
 const player = new Player();
 
