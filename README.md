@@ -45,20 +45,19 @@ This project is organized as follows:
    - engine.js
    - resources.js
 
-
 ## How does it work?
 
 - 
 
 ## How to play the game?
 
-- The player needs to cross the road without being hit by the bugs.
+- The player needs to collect all the gems and cross the road avoiding to be hit by the bugs.
 - To move the players use the arrow keys.
-- The player starts with 3 lives (hearts) and 0 score (stars).
+- The player starts with 3 hearts and 0 stars.
   - If the player gets hit, she/he loses 1 heart.
-  - If the player gets 1 gem, she/he wins 1 score (star).
-- The player wins when she/he gets all the gems and finish crossing the road.
-- The game is over when the player loses all lives (hearts). 
+  - If the player gets 1 gem, she/he wins 1 star.
+- The player wins when she/he gets 3 stars and finish crossing the road.
+- The game is over when the player loses all hearts. 
   
 ## How to install and use it?
 
@@ -69,6 +68,7 @@ This game works in different sizes of screens as well.
 
 ## References
 
+- [W3 Schools Documentation](https://www.w3schools.com/)
 - [MDN Documentation](https://developer.mozilla.org)
 - Gradient from [CSSmatic](https://www.cssmatic.com)
 - Animations from [CSS3 Animate](http://cssanimate.com/)
