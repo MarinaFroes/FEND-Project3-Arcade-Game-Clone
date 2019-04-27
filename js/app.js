@@ -54,10 +54,10 @@ class Player extends Character {
       if (this.y >= enemy.y - 0.3 && this.y <= enemy.y + 0.3 && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
         player.x = 2;
         player.y = 5;
-        //TODO: Add score
         this.life > 0 ? this.life -= 1 : console.log('game over');
         console.log(`You have ${this.life} lives`);
-        //TODO: Add game over
+        const heart = document.querySelector('.fa-heart');
+        heart.parentNode.removeChild(heart);
       }
     })
   }
@@ -71,7 +71,7 @@ class Player extends Character {
         gem.y = -1;
         const star = document.createElement('i');
         star.setAttribute('class', 'fas fa-star');
-        document.getElementById('score').appendChild(star);
+        document.getElementById('star').appendChild(star);
       } 
     })
   }
