@@ -7,32 +7,44 @@
   <link rel="icon" sizes="144x144" href="favicon.png">
   <link rel="stylesheet" href="./css/style.css">
   <title>Arcade Game</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
+    integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 </head>
 <body>
   <header>
     <h1>Classic Arcade Game Clone</h1>
     <h2>Udacity Front-end Nanodegree Project</h2>
-    <section>
-      <h3>Score: </h3>
-      <img src="./images/Star.png" alt="star" class="header-img">
-      <img src="./images/Star.png" alt="star" class="header-img">
-      <img src="./images/Star.png" alt="star" class="header-img">
-      <h3>Life: </h3>
-      <img src="./images/Heart.png" alt="heart" class="header-img">
-      <img src="./images/Heart.png" alt="heart" class="header-img">
-      <img src="./images/Heart.png" alt="heart" class="header-img">
-    </section>
+    <div class="score-panel">
+      <div class="info score">
+        <h3>Score: </h3>
+        <img src="./images/Star.png" alt="star" class="star">
+        <img src="./images/Star.png" alt="star" class="star">
+        <img src="./images/Star.png" alt="star" class="star">
+      </div>
+      <div class="info life">
+        <h3>Life: </h3>
+        <img src="./images/Heart.png" alt="heart" class="heart">
+        <img src="./images/Heart.png" alt="heart" class="heart">
+        <img src="./images/Heart.png" alt="heart" class="heart">
+      </div>
+    </div>
   </header>
   <main>
-  <div class="is-hidden modal-overlay">
-    <div class="modal">
-      <button onclick="window.location.reload()">x</button>
-      <h1>You win!</h1>
-      <img src="./images/char-princess-girl.png" alt="princess" class="jumping">
-      <p>Click on the X to reset game!</p>
+    <div id="game"></div>
+    <div class="is-hidden modal-overlay">
+      <div class="modal">
+        <button onclick="window.location.reload()">x</button>
+        <h1>You win!</h1>
+        <img src="./images/char-princess-girl.png" alt="princess" class="jumping">
+        <p>Click on the X to reset game!</p>
+      </div>
     </div>
-  </div>
   </main>
+  <footer>
+    <p>Page written by Marina Fróes A. Costa</p>
+    <a href="https://www.linkedin.com/in/marina-froes-a-costa/" class="fab fa-linkedin" target="_blank"></a>
+    <a href="https://github.com/MarinaFroes" class="fab fa-github" target="_blank"></a>
+  </footer>
   <script src="./js/resources.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/engine.js"></script>
