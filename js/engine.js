@@ -79,16 +79,8 @@ const Engine = (function(global) {
     */
   function update(dt) {
     updateEntities(dt);
-    checkCollisions();
-  }
-
-  function checkCollisions() {
-    allEnemies.forEach(enemy => {
-      if (player.checkCollisions(enemy)) {
-        player.x = 2;
-        player.y = 5;
-      } 
-    })
+    player.checkCollisions();
+    player.checkScore();
   }
 
   /* This is called by the update function and loops through all of the
@@ -156,9 +148,9 @@ const Engine = (function(global) {
     /* Loop through all of the objects within the allEnemies array and call
       * the render function you have defined.
       */
-    allEnemies.forEach(function(enemy) {
-      enemy.render();
-    });
+    allEnemies.forEach(enemy => enemy.render());
+
+    allGems.forEach(gem => gem.render());
 
     player.render();
   }
@@ -184,7 +176,12 @@ const Engine = (function(global) {
     'images/char-pink-girl.png',
     'images/char-horn-girl.png',
     'images/char-cat-girl.png',
-    'images/char-princess-girl.png'
+    'images/char-princess-girl.png',
+    'images/Gem Blue.png',
+    'images/Gem Green.png',
+    'images/Gem Orange.png',
+    'images/Heart.png',
+    'images/Star.png'
   ]);
   Resources.onReady(init);
 

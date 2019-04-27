@@ -36,6 +36,8 @@ class Player extends Character {
     this.sprite += 'char-pink-girl.png';
     this.isMoving = false;
     this.isWinner = false;
+    this.score = 0;
+    this.life = 3;
   }
 
   update(dt) {
@@ -47,8 +49,28 @@ class Player extends Character {
     }
   }
 
-  checkCollisions(enemy) {
-    return (this.y === enemy.y) && (this.x >= enemy.x - 0.7) && (this.x <= enemy.x + 0.7);
+  checkCollisions() {
+    allEnemies.forEach(enemy => {
+      if (this.y === enemy.y && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
+        player.x = 2;
+        player.y = 5;
+        this.score = 0;
+        console.log(`Ooops! ${this.score} is your score`);
+        //TODO: Add score
+        this.life > 0 ? this.life -= 1 : 'game over';
+        console.log(this.life);
+        //TODO: Add game over
+      }
+    })
+  }
+
+  checkScore() {
+    allGems.forEach(gem => {
+      if (this.y === gem.y && this.x === gem.x) {
+        this.score += 1;
+        console.log(this.score);
+      }
+    })
   }
 
   handleInput(direction) {
@@ -97,13 +119,37 @@ class Modal {
   }
 }
 
+class Gem extends Character {
+  constructor(color) {
+    super();
+    this.sprite += 'Gem ' + color +'.png';
+    this.x = (Math.floor(Math.random() * 5));
+    this.y = (Math.floor(Math.random() * 6));
+  }
+  
+  update(dt) {
+    super.update();
+  }
+  
+}
+
 const modal = new Modal(document.querySelector('.modal-overlay'));
 
-
-
-const allEnemies = [new Enemy(0,1), new Enemy(0,2), new Enemy(0,3)];
+const allEnemies = [
+  new Enemy(0, 1),
+  new Enemy(0, 2),
+  new Enemy(0, 3),
+  new Enemy(-3, 3),
+  new Enemy(-3, 2),
+  new Enemy(-3, 1)];
 
 const player = new Player();
+
+const allGems = [
+  new Gem('Blue'),
+  new Gem('Orange'),
+  new Gem('Green')
+];
 
 document.addEventListener('keyup', e => {
   const allowedKeys = {
