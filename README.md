@@ -41,9 +41,9 @@ This project is organized as follows:
    - stone-block.png
    - water-block.png
  - /js
-   - app.js -> 
-   - engine.js -> 
-   - resources.js -> 
+   - app.js  
+   - engine.js
+   - resources.js
 
 
 ## How does it work?
@@ -52,7 +52,13 @@ This project is organized as follows:
 
 ## How to play the game?
 
--
+- The player needs to cross the road without being hit by the bugs.
+- To move the players use the arrow keys.
+- The player starts with 3 lives (hearts) and 0 score (stars).
+  - If the player gets hit, she/he loses 1 heart.
+  - If the player gets 1 gem, she/he wins 1 score (star).
+- The player wins when she/he gets all the gems and finish crossing the road.
+- The game is over when the player loses all lives (hearts). 
   
 ## How to install and use it?
 
@@ -64,6 +70,7 @@ This game works in different sizes of screens as well.
 ## References
 
 - [MDN Documentation](https://developer.mozilla.org)
-- [CSSmatic](https://www.cssmatic.com)
-- [CSS3 Animate](http://cssanimate.com/)
-- [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
+- Gradient from [CSSmatic](https://www.cssmatic.com)
+- Animations from [CSS3 Animate](http://cssanimate.com/)
+- Modal from [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
+- Based on the [Getting Started conducted by @Rodrick](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000)
