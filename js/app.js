@@ -41,8 +41,9 @@ class Player extends Character {
   update(dt) {
     super.update();
     if (this.isInTheWater && !this.isWinner && !this.isMoving) {
-      alert('You win');
       this.isWinner = true;
+      window.openModal = modal.open.bind(modal);
+      window.openModal();
     }
   }
 
@@ -75,6 +76,30 @@ class Player extends Character {
     this.isMoving = false;
   }
 }
+
+class Modal {
+  constructor(overlay) {
+    this.overlay = overlay;
+    const closeButton = overlay.querySelector('button')
+    closeButton.addEventListener('click', this.close.bind(this));
+    overlay.addEventListener('click', event => {
+      if (event.srcElement.id === this.overlay.id) {
+        this.close();
+      }
+    });
+  }
+  open() {
+    this.overlay.classList.remove('is-hidden');
+  }
+
+  close() {
+    this.overlay.classList.add('is-hidden');
+  }
+}
+
+const modal = new Modal(document.querySelector('.modal-overlay'));
+
+
 
 const allEnemies = [new Enemy(0,1), new Enemy(0,2), new Enemy(0,3)];
 
