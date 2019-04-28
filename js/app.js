@@ -4,7 +4,8 @@ class Character {
     this.x = 2;
     this.y = 5;
   }
-
+  
+  //Variables to check if the enemy is out of the board and if the player is in the water
   update(dt) {
     this.isOutOfBoard = this.x > 5;
     this.isInTheWater = this.y === 0;
@@ -23,9 +24,10 @@ class Enemy extends Character {
     this.y = y;
   }
 
+  //Updates the position of the enemies with random pace
   update(dt) {
     super.update();
-    this.randomPace = Math.floor(Math.random() * 6) * dt;
+    this.randomPace = Math.floor(Math.random() * 5) * dt;
     this.isOutOfBoard ? this.x = -1 : this.x += this.randomPace;
   }
 }
@@ -34,12 +36,14 @@ class Player extends Character {
   constructor() {
     super();
     this.sprite += 'char-pink-girl.png';
-    this.isMoving = false;
-    this.isWinner = false;
+    this.isMoving = false; 
+    this.isWinner = false; 
     this.score = 0;
     this.life = 3;
   }
-
+  
+  //Updates the player and if all the conditions are met, invokes the modal open method
+  //Updates isWinner variable to avoid infinite loop when the player meets winning conditions
   update(dt) {
     super.update();
     if (this.isInTheWater && !this.isWinner && !this.isMoving && this.score === 3) {
@@ -47,11 +51,15 @@ class Player extends Character {
       modal.open('win');
     }
   }
-
+  
+  //Changes the caracter based on the argument received
   changeChar(name) {
     this.sprite = 'images/char-' + name + '.png';
   }
-
+  
+  //Checks collisions between the player and each of the enemies
+  //If there was a collision: resets the player position and loses heart
+  //If the player loses all the hearts: it invokes lose modal
   checkCollisions() {
     allEnemies.forEach(enemy => {
       if (this.y >= enemy.y - 0.3 && this.y <= enemy.y + 0.3 && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
@@ -59,30 +67,32 @@ class Player extends Character {
           player.x = 2;
           player.y = 5;
           this.life -= 1;
-          console.log(`You have ${this.life} lives`);
           const heart = document.querySelector('.fa-heart');
           heart.parentNode.removeChild(heart);
-        } else {
+        } else if (this.life === 1 && !this.isWinner){
           modal.open('lose');
         }
       }
     });
   }
-
+  
+  //Increments the score and adds a star each time the player gets a gem
+  //When the player gets a gem, it is removed from the screen
   checkScore() {
     allGems.forEach(gem => {
       if (this.y === gem.y && this.x >= gem.x - 0.7 && this.x <= gem.x + 0.7) {
         this.score += 1;
-        console.log(`Your score: ${this.score}`);
         gem.x = -1;
         gem.y = -1;
         const star = document.createElement('i');
         star.setAttribute('class', 'icon fas fa-star');
-        document.getElementById('star').appendChild(star);
+        document.querySelector('.star-container').appendChild(star);
       } 
     })
   }
-
+  
+  //Makes the player move based on the keys pressed
+  //Updates the isMoving variable to avoid winning the game before the player is rendered in the water
   handleInput(direction) {
     switch (direction) {
       case 'up':
@@ -103,51 +113,47 @@ class Player extends Character {
     this.isMoving = true;
   }
   
+  //Reassigns the isMoving variable to false again to guarantee that the movement is over and allow the player to win the game if the conditions are met
   render() {
     super.render();
     this.isMoving = false;
   }
 }
 
+//Creates gems in a random position on the column but in a specific row
+class Gem extends Character {
+  constructor(color, y) {
+    super();
+    this.sprite += 'Gem ' + color + '.png';
+    this.x = (Math.floor(Math.random() * 5) + 0.15);
+    this.y = y;
+  }
+}
+
+//Creates a modal to be shown when the player win ou lose the game
 class Modal {
   constructor(overlay) {
     this.overlay = overlay;
-    overlay.addEventListener('click', event => {
-      if (event.srcElement.id === this.overlay.id) {
-        this.close();
-      }
-    });
   }
 
   open(winOrLose) {
-    let modalText = document.getElementById('modal-text');
+    let modalText = document.querySelector('.modal-text');
     if (winOrLose === 'win') {
       modalText.innerText = 'You win :D';
-      document.getElementById('modal').classList.add('is-winner');
-      document.getElementById('princess').classList.add('jumping');
+      document.querySelector('.modal').classList.add('is-winner');
+      document.querySelector('.princess').classList.add('jumping');
     } else {
       modalText.innerText = 'You lose :(';
-      document.getElementById('modal').classList.add('is-loser');
+      document.querySelector('.modal').classList.add('is-loser');
     }
     this.overlay.classList.remove('is-hidden');
   }
 }
 
-class Gem extends Character {
-  constructor(color) {
-    super();
-    this.sprite += 'Gem ' + color + '.png';
-    this.x = (Math.floor(Math.random() * 5) + 0.15);
-    this.y = (Math.floor(Math.random() * 6));
-  }
-  
-  update(dt) {
-    super.update();
-  }
-}
-
+//Creates a modal
 const modal = new Modal(document.querySelector('.modal-overlay'));
 
+//Creates an array with all the enemies
 const allEnemies = [
   new Enemy(0, 0.7),
   new Enemy(0, 1.7),
@@ -157,22 +163,25 @@ const allEnemies = [
   new Enemy(-3, 0.7)
 ];
 
+//Creates the player
 let player = new Player();
 
+//Adds 3 different gems distributed on the road
 const allGems = [
-  new Gem('Blue'),
-  new Gem('Orange'),
-  new Gem('Green')
+  new Gem('Blue', 1),
+  new Gem('Orange', 2),
+  new Gem('Green', 3)
 ];
 
-document.getElementById('char-menu').addEventListener('click', e => {
+//Allows the user to change the player by clicking on the images
+document.querySelector('.char-menu').addEventListener('click', e => {
   if (e.target.nodeName === 'IMG') {
     player.changeChar(e.target.id);
   }
 });
 
-//Arrow keys for right handed: 37, 38, 39, 40
-//WASD keys for left handed: 87, 65, 68, 83
+//Arrow keys for right handed people: 37, 38, 39, 40
+//WASD keys for left handed people: 87, 65, 68, 83
 document.addEventListener('keyup', e => {
   const allowedKeys = {
     37: 'left',
