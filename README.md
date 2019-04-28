@@ -39,10 +39,6 @@ This project is organized as follows:
    - engine.js
    - resources.js
 
-## How does it work?
-
-- 
-
 ## How to play the game?
 
 - The player needs to collect all the gems and cross the road avoiding to be hit by the bugs.
@@ -58,7 +54,6 @@ This project is organized as follows:
 Considering it uses only vanilla JavaScript, HTML and CSS, it is not necessary to install additional features. 
 Just download the files and double click on the index.html file.
 It works fine in Chrome (Version 73.0.3683.86), Firefox (Version 66.0.2) and Safari (Version 12.0.3).
-This game works in different sizes of screens as well.
 
 ## References
 
