@@ -1,6 +1,7 @@
 
 ![Favicon](/images/favicon.png) 
-# Arcade Game Clone - Udacity Front-End Nanodegree Project 3
+# Classic Arcade Game Clone 
+## Udacity Front-End Nanodegree Project 3
 
 ## Introduction
 

@@ -49,17 +49,23 @@ class Player extends Character {
     }
   }
 
+  changeChar(name) {
+    this.sprite = 'images/char-' + name + '.png';
+  }
+
   checkCollisions() {
     allEnemies.forEach(enemy => {
       if (this.y >= enemy.y - 0.3 && this.y <= enemy.y + 0.3 && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
-        player.x = 2;
-        player.y = 5;
-        this.life > 0 ? this.life -= 1 : console.log('game over');
-        console.log(`You have ${this.life} lives`);
-        const heart = document.querySelector('.fa-heart');
-        heart.parentNode.removeChild(heart);
+        if (this.life > 0) {
+          player.x = 2;
+          player.y = 5;
+          this.life -= 1;
+          console.log(`You have ${this.life} lives`);
+          const heart = document.querySelector('.fa-heart');
+          heart.parentNode.removeChild(heart);
+        } 
       }
-    })
+    });
   }
 
   checkScore() {
@@ -125,7 +131,7 @@ class Modal {
 class Gem extends Character {
   constructor(color) {
     super();
-    this.sprite += 'Gem ' + color +'.png';
+    this.sprite += 'Gem ' + color + '.png';
     this.x = (Math.floor(Math.random() * 5) + 0.15);
     this.y = (Math.floor(Math.random() * 6));
   }
@@ -146,7 +152,13 @@ const allEnemies = [
   // new Enemy(-3, 0.7)
 ];
 
-const player = new Player();
+document.getElementById('char-menu').addEventListener('click', e => {
+  if (e.target.nodeName === 'IMG') {
+    player.changeChar(e.target.id);
+  }
+});
+
+let player = new Player();
 
 const allGems = [
   new Gem('Blue'),
@@ -163,4 +175,4 @@ document.addEventListener('keyup', e => {
   };
 
   player.handleInput(allowedKeys[e.keyCode]);
-})
+});

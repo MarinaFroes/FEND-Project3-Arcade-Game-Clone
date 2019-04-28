@@ -69,6 +69,17 @@ h1 {
   color: orange;
 }
 
+/* Aside */
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.char {
+  height: 6rem;
+}
+
 /* Modal */
 .modal-overlay {
   position: fixed;
