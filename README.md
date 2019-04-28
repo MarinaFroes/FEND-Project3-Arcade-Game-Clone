@@ -48,7 +48,7 @@ This project is organized as follows:
 ## How to play the game?
 
 - The player needs to collect all the gems and cross the road avoiding to be hit by the bugs.
-- To move the players use the arrow keys.
+- To move the players use the arrow keys or `W` (up), `A` (left) `S` (down) and `D` (right) keys.
 - The player starts with 3 hearts and 0 stars.
   - If the player gets hit, she/he loses 1 heart.
   - If the player gets 1 gem, she/he wins 1 star.
@@ -66,7 +66,6 @@ This game works in different sizes of screens as well.
 
 - [W3 Schools Documentation](https://www.w3schools.com/)
 - [MDN Documentation](https://developer.mozilla.org)
-- Gradient from [CSSmatic](https://www.cssmatic.com)
 - Animations from [CSS3 Animate](http://cssanimate.com/)
 - Modal from [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
 - Based on the [Getting Started conducted by @Rodrick](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000)

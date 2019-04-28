@@ -44,8 +44,7 @@ class Player extends Character {
     super.update();
     if (this.isInTheWater && !this.isWinner && !this.isMoving && this.score === 3) {
       this.isWinner = true;
-      window.openModal = modal.open.bind(modal);
-      window.openModal();
+      modal.open('win');
     }
   }
 
@@ -63,7 +62,9 @@ class Player extends Character {
           console.log(`You have ${this.life} lives`);
           const heart = document.querySelector('.fa-heart');
           heart.parentNode.removeChild(heart);
-        } 
+        } else {
+          modal.open('lose');
+        }
       }
     });
   }
@@ -111,20 +112,24 @@ class Player extends Character {
 class Modal {
   constructor(overlay) {
     this.overlay = overlay;
-    const closeButton = overlay.querySelector('button')
-    closeButton.addEventListener('click', this.close.bind(this));
     overlay.addEventListener('click', event => {
       if (event.srcElement.id === this.overlay.id) {
         this.close();
       }
     });
   }
-  open() {
-    this.overlay.classList.remove('is-hidden');
-  }
 
-  close() {
-    this.overlay.classList.add('is-hidden');
+  open(winOrLose) {
+    let modalText = document.getElementById('modal-text');
+    if (winOrLose === 'win') {
+      modalText.innerText = 'You win :D';
+      document.getElementById('modal').classList.add('is-winner');
+      document.getElementById('princess').classList.add('jumping');
+    } else {
+      modalText.innerText = 'You lose :(';
+      document.getElementById('modal').classList.add('is-loser');
+    }
+    this.overlay.classList.remove('is-hidden');
   }
 }
 
@@ -152,12 +157,6 @@ const allEnemies = [
   // new Enemy(-3, 0.7)
 ];
 
-document.getElementById('char-menu').addEventListener('click', e => {
-  if (e.target.nodeName === 'IMG') {
-    player.changeChar(e.target.id);
-  }
-});
-
 let player = new Player();
 
 const allGems = [
@@ -166,12 +165,24 @@ const allGems = [
   new Gem('Green')
 ];
 
+document.getElementById('char-menu').addEventListener('click', e => {
+  if (e.target.nodeName === 'IMG') {
+    player.changeChar(e.target.id);
+  }
+});
+
+//Arrow keys for right handed: 37, 38, 39, 40
+//WASD keys for left handed: 87, 65, 68, 83
 document.addEventListener('keyup', e => {
   const allowedKeys = {
     37: 'left',
     38: 'up',
     39: 'right',
-    40: 'down'
+    40: 'down',
+    65: 'left',
+    87: 'up',
+    68: 'right',
+    83: 'down'
   };
 
   player.handleInput(allowedKeys[e.keyCode]);
