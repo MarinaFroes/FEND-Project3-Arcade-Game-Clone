@@ -7,10 +7,10 @@
   <link rel="icon" sizes="144x144" href="./images/favicon.png">
   <link rel="stylesheet" href="./css/style.css">
   <title>Arcade Game Clone</title>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"
-    integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
 </head>
 <body>
+
   <header>
     <h1>Classic Arcade Game Clone</h1>
     <h2>Udacity Front-end Nanodegree Project</h2>
@@ -26,6 +26,7 @@
       </div>
     </div>
   </header>
+
   <aside id="char-menu">
     <h3>Choose your player:</h3>
     <img src="./images/char-cat-girl.png" alt="cat girl" class="char" id="cat-girl">
@@ -33,17 +34,19 @@
     <img src="./images/char-pink-girl.png" alt="pink girl" class="char"  id="pink-girl">
     <img src="./images/char-boy.png" alt="boy" class="char"  id="boy">
   </aside>
+
   <main>
     <div id="game"></div>
     <div class="is-hidden modal-overlay">
       <div id="modal">
         <button class="modal-button" onclick="window.location.reload()">x</button>
-        <h1 id="modal-text"></h1>
+        <h1 id="modal-text">modal text</h1>
         <img src="./images/char-princess-girl.png" alt="princess" id="princess">
         <p>Click on the X to reset game!</p>
       </div>
     </div>
   </main>
+
   <aside class="instructions">
     <div class="instructions-header">
       <h3>Instructions</h3>
@@ -68,33 +71,32 @@
           <h4>To win stars</h4>
         </li>
         <li>Collect gems to win stars</li>
-        <li>More than one gem can be on the same spot</li>
-        <li>The player needs 3 stars to win</li>
+        <li>You need 3 stars to win</li>
       </ul>
       <ul>
         <li>
           <h4>To lose hearts</h4>
         </li>
-        <li>The player loses hearts when she/he gets hit by a bug</li>
-        <li>The player loses the game when she/he loses all the hearts</li>
-        <li>The player needs 3 stars to win</li>
+        <li>You lose hearts when get hit by a bug</li>
+        <li>You lose the game when lose all the hearts</li>
+        <li>You need 3 stars to win</li>
       </ul>
       <ul>
         <li>
           <h4>To win the game</h4>
         </li>
-        <li>The player needs 3 stars and at least 1 heart</li>
-        <li>The player wins when she/he gets into the water</li>
-        <li>The player needs 3 stars to win</li>
+        <li>You need 3 stars and at least 1 heart</li>
+        <li>You win when get into the water</li>
       </ul>
     </div>
-    
   </aside>
+
   <footer>
     <p>Page written by Marina Fróes A. Costa</p>
     <a href="https://www.linkedin.com/in/marina-froes-a-costa/" class="fab fa-linkedin" target="_blank"></a>
     <a href="https://github.com/MarinaFroes" class="fab fa-github" target="_blank"></a>
   </footer>
+
   <script src="./js/resources.js"></script>
   <script src="./js/app.js"></script>
   <script src="./js/engine.js"></script>
