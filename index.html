@@ -20,9 +20,9 @@
       </div>
       <div class="info" >
         <h3>Hearts: </h3>
-        <i class="fas fa-heart"></i>
-        <i class="fas fa-heart"></i>
-        <i class="fas fa-heart"></i>
+        <i class="icon fas fa-heart"></i>
+        <i class="icon fas fa-heart"></i>
+        <i class="icon fas fa-heart"></i>
       </div>
     </div>
   </header>
@@ -37,13 +37,59 @@
     <div id="game"></div>
     <div class="is-hidden modal-overlay">
       <div id="modal">
-        <button onclick="window.location.reload()">x</button>
+        <button class="modal-button" onclick="window.location.reload()">x</button>
         <h1 id="modal-text"></h1>
         <img src="./images/char-princess-girl.png" alt="princess" id="princess">
         <p>Click on the X to reset game!</p>
       </div>
     </div>
   </main>
+  <aside class="instructions">
+    <div class="instructions-header">
+      <h3>Instructions</h3>
+      <button 
+        class="arrow fas fa-bars" 
+        onclick="(() => document.getElementById('inst').classList.toggle('is-visible'))()"
+      >
+      </button>
+    </div>
+    <div class="is-hidden" id="inst">
+      <ul>
+        <li>
+          <h4>To move the player</h4>
+        </li>
+        <li>Arrow up or "W": up</li>
+        <li>Arrow down or "S": down</li>
+        <li>Arrow right or "D": right</li>
+        <li>Arrow left or "A": left</li>
+      </ul>
+      <ul>
+        <li>
+          <h4>To win stars</h4>
+        </li>
+        <li>Collect gems to win stars</li>
+        <li>More than one gem can be on the same spot</li>
+        <li>The player needs 3 stars to win</li>
+      </ul>
+      <ul>
+        <li>
+          <h4>To lose hearts</h4>
+        </li>
+        <li>The player loses hearts when she/he gets hit by a bug</li>
+        <li>The player loses the game when she/he loses all the hearts</li>
+        <li>The player needs 3 stars to win</li>
+      </ul>
+      <ul>
+        <li>
+          <h4>To win the game</h4>
+        </li>
+        <li>The player needs 3 stars and at least 1 heart</li>
+        <li>The player wins when she/he gets into the water</li>
+        <li>The player needs 3 stars to win</li>
+      </ul>
+    </div>
+    
+  </aside>
   <footer>
     <p>Page written by Marina Fróes A. Costa</p>
     <a href="https://www.linkedin.com/in/marina-froes-a-costa/" class="fab fa-linkedin" target="_blank"></a>

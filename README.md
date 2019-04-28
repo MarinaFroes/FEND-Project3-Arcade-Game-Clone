@@ -1,9 +1,7 @@
 
 ![Favicon](/images/favicon.png) 
 # Classic Arcade Game Clone 
-## Udacity Front-End Nanodegree Project 3
-
-## Introduction
+## Udacity Front-End Nanodegree Project 3 - Introduction
 
 This Classic Arcade Game Clone is the third project of the Udacity Front-End Nanodegree and follows the "Classic Arcade Game Clone project rubric" and the following style guides provided by Udacity:
 - CSS Style Guide
@@ -66,6 +64,7 @@ This game works in different sizes of screens as well.
 
 - [W3 Schools Documentation](https://www.w3schools.com/)
 - [MDN Documentation](https://developer.mozilla.org)
+- Icons from [Font Awesome](https://fontawesome.com)
 - Animations from [CSS3 Animate](http://cssanimate.com/)
-- Modal from [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
+- Modal base on the [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
 - Based on the [Getting Started conducted by @Rodrick](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000)

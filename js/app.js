@@ -55,7 +55,7 @@ class Player extends Character {
   checkCollisions() {
     allEnemies.forEach(enemy => {
       if (this.y >= enemy.y - 0.3 && this.y <= enemy.y + 0.3 && this.x >= enemy.x - 0.7 && this.x <= enemy.x + 0.7) {
-        if (this.life > 0) {
+        if (this.life > 1) {
           player.x = 2;
           player.y = 5;
           this.life -= 1;
@@ -77,7 +77,7 @@ class Player extends Character {
         gem.x = -1;
         gem.y = -1;
         const star = document.createElement('i');
-        star.setAttribute('class', 'fas fa-star');
+        star.setAttribute('class', 'icon fas fa-star');
         document.getElementById('star').appendChild(star);
       } 
     })
@@ -152,9 +152,9 @@ const allEnemies = [
   new Enemy(0, 0.7),
   new Enemy(0, 1.7),
   new Enemy(0, 2.7),
-  // new Enemy(-3, 2.7),
-  // new Enemy(-3, 1.7),
-  // new Enemy(-3, 0.7)
+  new Enemy(-3, 2.7),
+  new Enemy(-3, 1.7),
+  new Enemy(-3, 0.7)
 ];
 
 let player = new Player();

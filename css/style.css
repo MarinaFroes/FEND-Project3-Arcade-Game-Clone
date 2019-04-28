@@ -52,7 +52,7 @@ h1 {
   /* border: 3px solid red; */
 }
 
-.fas {
+.icon {
   font-size: 1.5rem;
   background-color: white;
   padding: 0.4rem;
@@ -69,8 +69,8 @@ h1 {
   color: orange;
 }
 
-/* Aside */
-aside {
+/* Character Menu */
+#char-menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -116,7 +116,7 @@ aside {
   background: rgb(135, 178, 228)
 }
 
-button {
+.modal-button {
   background-color:#fff;
   border: none;
   color: #000;
@@ -269,6 +269,41 @@ button {
   100% {
     -ms-transform:  translate(0px,0px)  ;
   }
+}
+
+/* Instructions */
+.instructions {
+  background-color: rgba(226, 131, 131, 0.6);
+  padding: 1rem;
+  margin: 3rem;
+  width: 505px;
+}
+
+.instructions-header {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.instructions-header button {
+  display: inline;
+  background-color: #fff;
+  padding: 0.2rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: square inside;
+  padding: 1rem;
+}
+
+ul > :first-child {
+  list-style: none;
+}
+
+.is-visible {
+  display: block;
 }
 
 /* Footer */
