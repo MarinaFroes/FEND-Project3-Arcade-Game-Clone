@@ -25,20 +25,15 @@ This project is organized as follows:
  - /images
    - favicon.png -> my logo
    - char-boy.png
-   - char-cat-girl.png
-   - char-horn-girl.png
-   - char-pink-girl.png
-   - char-princess-girl.png
-   - enemy-bug.png
+   - char-cat-girl.png 
+   - char-horn-girl.png 
+   - char-pink-girl.png 
+   - char-princess-girl.png 
+   - enemy-bug.png 
    - Gem Blue.png
    - Gem Green.png
    - Gem Orange.png
    - grass-block.png
-   - Heart.png
-   - Key.png
-   - Rock.png
-   - Selector.png
-   - Star.png
    - stone-block.png
    - water-block.png
  - /js
