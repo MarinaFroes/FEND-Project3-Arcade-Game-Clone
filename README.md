@@ -61,5 +61,5 @@ It works fine in Chrome (Version 73.0.3683.86), Firefox (Version 66.0.2) and Saf
 - [MDN Documentation](https://developer.mozilla.org)
 - Icons from [Font Awesome](https://fontawesome.com)
 - Animations from [CSS3 Animate](http://cssanimate.com/)
-- Modal base on the [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
-- Based on the [Getting Started conducted by @Rodrick](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000)
+- Modal based on the [The Daily Signal](https://lowrey.me/modals-in-pure-es6-javascript/)
+- Game logic based on the [Getting Started conducted by @Rodrick](https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000)
