@@ -180,9 +180,7 @@ const Engine = (function(global) {
     'images/char-princess-girl.png',
     'images/Gem Blue.png',
     'images/Gem Green.png',
-    'images/Gem Orange.png',
-    'images/Heart.png',
-    'images/Star.png'
+    'images/Gem Orange.png'
   ]);
   Resources.onReady(init);
 
