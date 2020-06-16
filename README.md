@@ -15,6 +15,8 @@ The HTML and CSS files were validated by the followings validators  without any 
 
 ## Overview
 
+<p align="center"><img src="./images/screenshot.png" alt="screenshot of the page" title="screenshot of the page" width="50%"></p>
+
 This project is organized as follows:
  - index.html 
  - README.md 
