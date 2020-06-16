@@ -243,10 +243,14 @@ a {
   cursor: pointer;
 }
 
-.fab {
+.footer-icon {
   font-size: 2rem;
   color: rgb(196, 196, 192);
   padding: 1rem;
+}
+
+.footer-icon:hover {
+  color: black;
 }
 
 /* TODO: Make it responsive */
