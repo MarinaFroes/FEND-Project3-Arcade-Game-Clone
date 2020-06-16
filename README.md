@@ -1,7 +1,7 @@
+<p align="center"><img src="./images/mylogo.svg" alt="logo" title="logo" width="80"></p>
+<h1 align="center">Classic Arcade Game Clone - Udacity Front-End Nanodegree Project 3</h1>
 
-![Favicon](/images/favicon.png) 
-# Classic Arcade Game Clone 
-## Udacity Front-End Nanodegree Project 3 - Introduction
+## Introduction
 
 This Classic Arcade Game Clone is the third project of the Udacity Front-End Nanodegree and follows the "Classic Arcade Game Clone project rubric" and the following style guides provided by Udacity:
 - CSS Style Guide
